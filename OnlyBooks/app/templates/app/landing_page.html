@@ -1,0 +1,40 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'styles/landing_page.css' %}">
+{% endblock %}
+{% block content %}
+    <section id="categories" class="categories">
+        <h3>Explore by Genre</h3>
+        <div class="category-container">
+            <div class="category">Fiction</div>
+            <div class="category">Mystery</div>
+            <div class="category">Romance</div>
+            <div class="category">Science Fiction</div>
+        </div>
+    </section>
+
+    <section id="recommendations" class="recommendations">
+        <h3>Books Just for You</h3>
+        <div class="book-container">
+            <div class="book">
+                <img src="book1.jpg" alt="Book 1">
+                <h4>Book Title 1</h4>
+                <p>Author 1</p>
+                <span>⭐⭐⭐⭐</span>
+            </div>
+            <div class="book">
+                <img src="book2.jpg" alt="Book 2">
+                <h4>Book Title 2</h4>
+                <p>Author 2</p>
+                <span>⭐⭐⭐⭐</span>
+            </div>
+            <div class="book">
+                <img src="book3.jpg" alt="Book 3">
+                <h4>Book Title 3</h4>
+                <p>Author 3</p>
+                <span>⭐⭐⭐⭐</span>
+            </div>
+        </div>
+    </section>
+{% endblock %}

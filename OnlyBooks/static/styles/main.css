@@ -1,0 +1,196 @@
+/* Global Styles */
+header {
+    background: linear-gradient(to right, #3b2e8e, #f4a261); /* Dark blue to soft orange */
+    color: white;
+    padding: 20px 0;
+    position: relative;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.navbar h1 {
+    margin: 0;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #d6cde4; /* Light lavender */
+}
+
+.navbar > * {
+    z-index: 20;
+}
+
+.login-btn {
+    background-color: #d6cde4; /* Light lavender */
+    color: #3b2e8e; /* Dark blue */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #3b2e8e; /* Dark blue */
+    color: white;
+}
+
+.hero {
+    margin-top: 70px; /* Adjust for fixed navbar */
+    text-align: center;
+}
+
+.hero > * {
+    z-index: 20;
+    position: relative;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+}
+
+.hero input {
+    padding: 10px;
+    width: 60%;
+    margin: 10px 0;
+}
+
+.hero button {
+    padding: 10px 20px;
+    background: white;
+    color: #3b2e8e; /* Dark blue */
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+body {
+    font-family: 'Comfortaa', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #ffffff; /* White background */
+    color: #333333; /* Dark gray text */
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #fefefe; /* White */
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.cross-padder {
+    display: flex;
+    justify-content: space-between;
+}
+
+.iconoir-xmark {
+    cursor: pointer;
+    margin-left: auto;
+    width: 24px !important;
+    height: 24px !important;
+}
+
+.modal input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 20;
+}
+
+.modal button {
+    padding: 10px 20px;
+    background: #3b2e8e; /* Dark blue */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    z-index: 20;
+    border-radius: 1rem;
+}
+
+#switch_login_form > a {
+    color: blue;
+    text-decoration: underline;
+}
+
+#particles-js {
+    z-index: 1;
+    display: block;
+    position: absolute;
+    width: 95vw;
+    height: 95vh;
+}
+
+*[class^='iconoir-'], *[class*=' iconoir-'] {
+    color: black;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

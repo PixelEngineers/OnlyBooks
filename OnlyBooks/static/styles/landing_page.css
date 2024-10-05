@@ -1,0 +1,46 @@
+.categories {
+    padding: 20px;
+    text-align: center;
+    z-index: 20;
+    position: relative;
+}
+
+.category-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.category {
+    background: #3b2e8e; /* Dark blue */
+    color: white;
+    padding: 15px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.recommendations {
+    padding: 20px;
+    text-align: center;
+}
+
+.book-container {
+    display: flex;
+    justify-content: center;
+}
+
+.book {
+    margin: 10px;
+    text-align: center;
+    background: #f4f4f4; /* Light Gray */
+    border-radius: 5px;
+    padding: 10px;
+    width: 150px;
+}
+
+.book img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}

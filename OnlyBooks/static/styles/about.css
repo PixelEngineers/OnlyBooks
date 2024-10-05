@@ -1,0 +1,40 @@
+body {
+    background: linear-gradient(to right, #3b2e8e, #f4a261); /* Dark blue to soft orange */
+    color: white;
+    padding: 20px 0;
+    position: relative;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+main > div {
+    background-color: #fff;
+    color: #000;
+    padding: 2rem 1rem;B
+    border-radius: 1rem;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+}
+main > div >  div {
+    font-size: 2rem;
+}
+i::before {
+    width: 24px !important;
+    height: 24px !important;
+}
+i:hover {
+    filter: drop-shadow(0 0 0.75rem rgb(212, 58, 255));
+}
+
+.connections {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
