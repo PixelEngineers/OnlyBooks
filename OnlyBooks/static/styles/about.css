@@ -6,7 +6,7 @@ main {
 }
 
 main > div {
-    background-color: #fff;
+    background-color: #e8bf99;
     color: #000;
     padding: 2rem 1rem;
     border-radius: 1rem;
@@ -14,10 +14,12 @@ main > div {
     display: flex;
     flex-direction: column;
     transition: all ease-out 300ms;
+    filter: drop-shadow(0 0 2rem #101010);
 }
 main > div:hover {
     background-color: #f4a261;
     transform: scale(110%);
+    filter: none;
 }
 main > div >  div {
     font-size: 2rem;

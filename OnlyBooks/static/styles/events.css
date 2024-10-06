@@ -7,13 +7,13 @@
 }
 .event {
     z-index: 20;
-    background-color: #fff;
+    background-color: #e8bf99;
     display: flex;
     flex-direction: column;
     padding: 1rem 2rem;
     border-radius: 1rem;
     transition: all ease-out 300ms;
-    filter: drop-shadow(10px 10px 10rem black);
+    filter: drop-shadow(10px 10px 10rem #202020);
 }
 .event:hover {
     background-color: #f4a261;

@@ -108,23 +108,43 @@ body {
 .modal {
     display: none;
     position: fixed;
-    z-index: 1000;
+    z-index: 100;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
+    overflow: hidden;
     background-color: rgba(0, 0, 0, 0.7);
 }
 
 .modal-content {
-    background-color: #fefefe; /* White */
-    margin: 15% auto;
-    padding: 20px;
+    background-color: #fff;
+    margin:  10% auto;
     border: 1px solid #888;
     width: 300px;
-    border-radius: 8px;
+    color: black;
+    border-radius: 1rem;
     text-align: center;
+}
+#loginForm > h2 {
+    margin: 0;
+    height: 6rem;
+    text-align: center;
+    color: white;
+    padding-top: 2rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 5rem;
+    border-bottom-right-radius: 5rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    background-color: #513C89;
+}
+#loginForm > input {
+    border-top-width: 0;
+    border-right-width: 0;
+    border-left-width: 0;
+    outline: none;
 }
 
 .cross-padder {
@@ -150,7 +170,7 @@ body {
 
 .modal button {
     padding: 10px 20px;
-    background: #3b2e8e; /* Dark blue */
+    background: #513C89;
     color: white;
     border: none;
     cursor: pointer;
