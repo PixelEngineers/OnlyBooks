@@ -18,8 +18,43 @@ def landingPage(request):
         "author": "John Doe",
         "pages": 420,
         "tags": ["romance"],
-        "book_id": 4,
-    }] * 6
+        "book_id": 0,
+    }, {
+        "cover_link": "https://fastly.picsum.photos/id/48/300/500.jpg?hmac=5QhJmXR4ImtsMgLnbOSVBwrAqXg3U_gAWih9nI9WQhI",
+        "title": "Where the Crawdads Sing",
+        "author": "Delia Owens",
+        "pages": 755,
+        "tags": ["mystery"],
+        "book_id": 1,
+    }, {
+        "cover_link": "https://fastly.picsum.photos/id/635/300/500.jpg?hmac=tO26HtN5slHV7cMxJcAGuctfCfDDXw5uarJTt4PfARk",
+        "title": "The Midnight Library",
+        "author": "Haig",
+        "pages": 412,
+        "tags": ["mystery"],
+        "book_id": 1,
+    }, {
+        "cover_link": "https://fastly.picsum.photos/id/686/300/500.jpg?hmac=LaeHcHZ2FMzFVnGSUKu9X9PmhqHm0rbCoSJBdq0Kgj0",
+        "title": "Atomic Habits",
+        "author": "James Clear",
+        "pages": 322,
+        "tags": ["self-help"],
+        "book_id": 1,
+    }, {
+        "cover_link": "https://fastly.picsum.photos/id/1054/300/500.jpg?hmac=-5U-wG1YvgbJRg3MtdV5GUeufmAGSVMFAY9NpbB_zz0",
+        "title": "The Silent Patient",
+        "author": "Alex Michaelides",
+        "pages": 235,
+        "tags": ["thriller"],
+        "book_id": 1,
+    }, {
+        "cover_link": "https://fastly.picsum.photos/id/419/300/500.jpg?hmac=x5Iqjbg_1g5VPGlNIqGZqs8Clf1MzatGpRwJlB3Dlsk",
+        "title": "The Four Winds",
+        "author": "Kristin Hannah",
+        "pages": 129,
+        "tags": ["fiction"],
+        "book_id": 1,
+    }]
     return render(request, 'app/landing_page.html', {
         "page": page,
         "books": books_data,
