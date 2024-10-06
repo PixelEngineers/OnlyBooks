@@ -5,29 +5,15 @@
 {% endblock %}
 {% block content %}
     <div class="events">
-        <div class="event">
-            <div class="name">Samuhik Sambhog</div>
-            <div class="when_where">
-                <div class="date">2024-10-06</div>
-                <div class="location">Nirvana</div>
+        {% for event in events %}
+            <div class="event">
+                <div class="name">{{ event.name }}</div>
+                <div class="when_where">
+                    <div class="date">{{ event.date }}</div>
+                    <div class="location">{{ event.location }}</div>
+                </div>
+                <div class="description">{{ event.description }}</div>
             </div>
-            <div class="description">20 girls from E hostel + 5 boys from J hostel</div>
-        </div>
-        <div class="event">
-            <div class="name">Samuhik Sambhog</div>
-            <div class="when_where">
-                <div class="date">2024-10-06</div>
-                <div class="location">Nirvana</div>
-            </div>
-            <div class="description">20 girls from E hostel + 5 boys from J hostel</div>
-        </div>
-        <div class="event">
-            <div class="name">Samuhik Sambhog</div>
-            <div class="when_where">
-                <div class="date">2024-10-06</div>
-                <div class="location">Nirvana</div>
-            </div>
-            <div class="description">20 girls from E hostel + 5 boys from J hostel</div>
-        </div>
+        {% endfor %}
     </div>
 {% endblock %}

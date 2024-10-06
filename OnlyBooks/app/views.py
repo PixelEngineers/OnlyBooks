@@ -1,3 +1,5 @@
+import datetime
+
 from django.shortcuts import render
 
 # Create your views here.
@@ -15,8 +17,15 @@ def about(request):
 
 def events(request):
     page = 'events'
+    events_data = [{
+        "name": "Samuhik Sambhog",
+        "description": "20 girls from E hostel + 5 boys from J hostel",
+        "date": datetime.date(2024, 10, 6),
+        "location": "Nirvana"
+    }] * 3
     return render(request,'app/events.html', {
-        "page": page
+        "page": page,
+        "events": events_data
     })
 
 def books(request):
@@ -27,7 +36,7 @@ def books(request):
         "description": "John Doe's life history",
         "pages": 100,
         "tags": ["fiction", "sci-fi", "romance"]
-    }]
+    }] * 3
     return render(request,'app/books.html', {
         "page": page,
         "books": books_data
