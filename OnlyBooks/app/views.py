@@ -31,26 +31,32 @@ def events(request):
 def books(request):
     page = 'books'
     books_data = [{
-        "name": "John Doe's Biography",
+        "cover_link": "https://fastly.picsum.photos/id/83/300/500.jpg?hmac=xBw_i32ezzCcXFdm7P9L6RLda43HLOfcC-2K-xyl4Sk",
+        "title": "Dumb ways to die",
         "author": "John Doe",
-        "description": "John Doe's life history",
-        "pages": 100,
-        "tags": ["fiction", "sci-fi", "romance"]
-    }] * 3
+        "pages": 420,
+        "tags": ["romance"],
+        "book_id": 4,
+    }] * 14
     return render(request,'app/books.html', {
         "page": page,
-        "books": books_data
+        "books": list(map(
+             lambda book_data: map_ids(book_data),
+             books_data
+        ))
     })
 
-def map_review(review):
-    review["rating"] = [0] * review["rating"] # used to iterate in jinja
-    user_id = review.get("user_id")
+def map_ids(data):
+    rating = data.get("rating")
+    if rating is not None:
+        data["rating"] = [0] * rating # used to iterate in jinja
+    user_id = data.get("user_id")
     if user_id is not None:
-        review["user_link"] = f'/profile/{user_id}'
-    book_id = review.get("book_id")
+        data["user_link"] = f'/profile/{user_id}'
+    book_id = data.get("book_id")
     if book_id is not None:
-        review["book_link"] = f'/book/{book_id}'
-    return review
+        data["book_link"] = f'/book/{book_id}'
+    return data
 
 def book(request, book_id):
     page = 'book'
@@ -76,7 +82,7 @@ def book(request, book_id):
         "page": page,
         "book": book_data,
         "reviews": list(map(
-            lambda review: map_review(review),
+            lambda review: map_ids(review),
             reviews
         ))
     })
@@ -109,7 +115,7 @@ def profile(request, user_id):
         "page": page,
         "user_data": user_data,
         "reviews": list(map(
-            lambda review: map_review(review),
+            lambda review: map_ids(review),
             reviews
         ))
     })
