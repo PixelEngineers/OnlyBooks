@@ -1,0 +1,42 @@
+.events {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.event {
+    z-index: 20;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    transition: all ease-out 300ms;
+    filter: drop-shadow(10px 10px 10rem black);
+}
+.event:hover {
+    background-color: #f4a261;
+    transform: scale(120%);
+    filter: none;
+}
+.name {
+    font-size: 2rem;
+    color: #3b2e8e;
+    font-weight: 800;
+    text-align: center;
+}
+.when_where {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    justify-content: space-between;
+}
+.date .location {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+.description {
+    font-weight: 100;
+    font-size: 1.3rem;
+}

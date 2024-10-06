@@ -7,5 +7,14 @@ def landingPage(request):
         "page": page
     })
 
-def About (request):
-    return render(request,'app/about.html')
+def about(request):
+    page = 'about'
+    return render(request,'app/about.html', {
+        "page": page
+    })
+
+def events(request):
+    page = 'events'
+    return render(request,'app/events.html', {
+        "page": page
+    })
