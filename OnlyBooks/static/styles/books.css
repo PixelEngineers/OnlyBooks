@@ -14,6 +14,7 @@
     margin: auto;
     padding: 1rem 2rem;
     border-radius: 1rem;
+    width: 75%;
 }
 .book:hover {
     background-color: rgba(189, 94, 122, 0.44);

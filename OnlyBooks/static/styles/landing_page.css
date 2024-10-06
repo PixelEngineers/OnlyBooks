@@ -49,14 +49,14 @@
     grid-gap: 1rem 1rem;
     grid-template-columns: 1fr 1fr 1fr;
     width: 75%;
-    margin: auto;
+    margin: auto auto 2rem;
 }
 .book {
     display: flex;
     gap: 0.25rem;
     width: 70%;
-    background-color: #79535e;
-    filter: drop-shadow(0 0 0.25rem black);
+    background-color: rgba(202, 185, 190, 0.44);
+    filter: drop-shadow(0 0 0.5rem black);
     position: relative;
     z-index: 20;
     color: white;
@@ -65,7 +65,7 @@
     border-radius: 0.5rem;
 }
 .book:hover {
-    background-color: #936371;
+    background-color: rgba(189, 94, 122, 0.44);
 }
 .book > img {
     border-radius: 0.25rem;
