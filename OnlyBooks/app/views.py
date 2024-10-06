@@ -1,29 +1,57 @@
 import datetime
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
+from django.contrib import messages
+from django.http import JsonResponse
+from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.hashers import make_password
 
-from django.shortcuts import render
 
 # Create your views here.
 def landingPage(request):
     page = 'landing-page'
-    return render(request,'app/landing_page.html', {
-        "page": page
+    books_data = [{
+        "cover_link": "https://fastly.picsum.photos/id/83/300/500.jpg?hmac=xBw_i32ezzCcXFdm7P9L6RLda43HLOfcC-2K-xyl4Sk",
+        "title": "Dumb ways to die",
+        "author": "John Doe",
+        "pages": 420,
+        "tags": ["romance"],
+        "book_id": 4,
+    }] * 6
+    return render(request, 'app/landing_page.html', {
+        "page": page,
+        "books": books_data,
     })
+
 
 def about(request):
     page = 'about'
-    return render(request,'app/about.html', {
+    return render(request, 'app/about.html', {
         "page": page
     })
+
 
 def events(request):
     page = 'events'
     events_data = [{
-        "name": "Samuhik Sambhog",
-        "description": "20 girls from E hostel + 5 boys from J hostel",
-        "date": datetime.date(2024, 10, 6),
-        "location": "Nirvana"
-    }] * 3
-    return render(request,'app/events.html', {
+        "name": "Author Meet and Greet",
+        "description": "Meet Dr. John Doe for meet and greet session",
+        "date": datetime.date(2024, 10, 7),
+        "location": "Tan Building"
+    }, {
+        "name": "Speaker session by Dr. Phil",
+        "description": "Join for an inspiring speaker session by Dr. Phil",
+        "date": datetime.date(2024, 10, 8),
+        "location": "LT-101"
+    }, {
+        "name": "Book Nerds hang out",
+        "description": "Calling all book nerds, join us for a casual and fun hangout",
+        "date": datetime.date(2024, 10, 9),
+        "location": "OAT"
+    }]
+    return render(request, 'app/events.html', {
         "page": page,
         "events": events_data
     })
@@ -37,7 +65,7 @@ def books(request):
         "pages": 420,
         "tags": ["romance"],
         "book_id": 4,
-    }] * 14
+    }] * 6
     return render(request,'app/books.html', {
         "page": page,
         "books": list(map(
@@ -101,7 +129,7 @@ def profile(request, user_id):
         "book_id": 1
     }]
     user_data = {
-        "name": "John Doe",
+        "name": "Ojesh Srivastav",
         "favourite_tags": ["sci-fi", "romance"],
         "wishlisted_books": [{
             "link": 'book/0',
@@ -119,3 +147,61 @@ def profile(request, user_id):
             reviews
         ))
     })
+
+
+def login_view(request):
+    if request.method != 'POST':
+        return JsonResponse({})
+    username = request.POST['username']
+    password = request.POST['password']
+
+    # Authenticate the user
+    user = authenticate(request, username=username, password=password)
+
+    if user is not None:
+        # Log in the user
+        login(request, user)
+        messages.success(request, "Login successful!")
+    else:
+        messages.error(request, "Invalid username or password.")
+    return redirect('landing-page')
+
+@login_required(login_url='/login')
+def logout_view(request):
+    logout(request)
+    messages.success(request, "You have been logged out.")
+    return redirect('landing-page')
+
+def signup_view(request):
+    if request.method != 'POST':
+        return JsonResponse({})
+    username = request.POST['username']
+    password = request.POST['password']
+    confirm_password = request.POST['confirm_password']
+
+    # Validate password match
+    if password != confirm_password:
+        messages.error(request, "Passwords do not match.")
+        return redirect('signup')
+
+    # Check if the username is already taken
+    if User.objects.filter(username=username).exists():
+        messages.error(request, "Username is already taken.")
+        return redirect('signup')
+
+    # Create and authenticate the user
+    user = User.objects.create_user(username=username, password=password)
+    user.save()
+
+    # Automatically log in the user after signup
+    login(request, user)
+    messages.success(request, "Signup successful! You are now logged in.")
+    return redirect('landing-page')  # Redirect to a relevant page after signup
+
+def auth_view(request):
+    if request.method != 'POST':
+        return JsonResponse({})
+    print(request.POST)
+    if request.POST.get('confirm_password') is not None:
+        return signup_view(request)
+    return login_view(request)

@@ -6,7 +6,7 @@
 .book {
     display: flex;
     gap: 0.5rem;
-    background-color: #79535e;
+    background-color: rgba(202, 185, 190, 0.44);
     filter: drop-shadow(0 0 0.5rem black);
     position: relative;
     z-index: 20;
@@ -16,21 +16,22 @@
     border-radius: 1rem;
 }
 .book:hover {
-    background-color: #936371;
+    background-color: rgba(189, 94, 122, 0.44);
 }
 .book > img {
     border-radius: 0.5rem;
-    height: 250px;
+    height: 169px;
 }
 .info {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 .title {
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 .author {
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 .label {
     font-weight: 300;

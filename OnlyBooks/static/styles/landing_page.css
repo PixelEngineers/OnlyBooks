@@ -44,3 +44,60 @@
     height: auto;
     border-radius: 5px;
 }
+.books {
+    display: grid;
+    grid-gap: 1rem 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 75%;
+    margin: auto;
+}
+.book {
+    display: flex;
+    gap: 0.25rem;
+    width: 70%;
+    background-color: #79535e;
+    filter: drop-shadow(0 0 0.25rem black);
+    position: relative;
+    z-index: 20;
+    color: white;
+    margin: auto;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+.book:hover {
+    background-color: #936371;
+}
+.book > img {
+    border-radius: 0.25rem;
+    height: 125px;
+}
+.info {
+    display: flex;
+    flex-direction: column;
+}
+.title {
+    font-size: 1.25rem;
+}
+.author {
+    font-size: 0.75rem;
+}
+.label {
+    font-weight: 300;
+    font-size: 0.5rem;
+}
+.label_group {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+.pages {
+    font-size: 0.7rem;
+}
+.tags {
+    font-size: 0.7rem;
+}
+.tag {
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    background-color: #3b2e8e;
+}
