@@ -65,7 +65,9 @@ def profile(request):
         "message": "what the hell is this",
         "rating": 1
     }]
+    username = "John Doe"
     return render(request, 'app/profile.html', {
         "page": page,
+        "username": username,
         "reviews": reviews
     })
