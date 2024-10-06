@@ -18,3 +18,45 @@ def events(request):
     return render(request,'app/events.html', {
         "page": page
     })
+
+def books(request):
+    page = 'books'
+    books_data = [{
+        "name": "John Doe's Biography",
+        "author": "John Doe",
+        "description": "John Doe's life history",
+        "pages": 100,
+        "tags": ["fiction", "sci-fi", "romance"]
+    }]
+    return render(request,'app/books.html', {
+        "page": page,
+        "books": books_data
+    })
+
+def book(request, book_id):
+    page = 'book'
+    reviews = [{
+        "message": "love this author's work",
+        "rating": 5,
+    }, {
+        "message": "everything was amazing, but chapter 7 could have been better",
+        "rating": 4,
+    }]
+    return render(request, 'app/book.html', {
+        "page": page,
+        "reviews": reviews
+    })
+
+def profile(request):
+    page = 'profile'
+    reviews = [{
+        "message": "best shit ever",
+        "rating": 5
+    }, {
+        "message": "what the hell is this",
+        "rating": 1
+    }]
+    return render(request, 'app/profile.html', {
+        "page": page,
+        "reviews": reviews
+    })

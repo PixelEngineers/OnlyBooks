@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'styles/books.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="books">
+        {% for book in books %}
+            <div class="book">
+                <div class="name">{{ book.name }}</div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

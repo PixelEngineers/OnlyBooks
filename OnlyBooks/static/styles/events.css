@@ -20,23 +20,23 @@
     transform: scale(120%);
     filter: none;
 }
-.name {
+.event >.name {
     font-size: 2rem;
     color: #3b2e8e;
     font-weight: 800;
     text-align: center;
 }
-.when_where {
+.event > .when_where {
     display: flex;
     gap: 0.6rem;
     align-items: center;
     justify-content: space-between;
 }
-.date .location {
+.event > .date + .location {
     font-size: 0.9rem;
     opacity: 0.9;
 }
-.description {
+.event > .description {
     font-weight: 100;
     font-size: 1.3rem;
 }
