@@ -24,6 +24,11 @@ main > div:hover {
 main > div >  div {
     font-size: 2rem;
 }
+.big {
+    text-align: center;
+    font-size: 3rem;
+    color: #3b2e8e;
+}
 i::before {
     width: 24px !important;
     height: 24px !important;
