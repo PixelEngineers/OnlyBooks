@@ -47,11 +47,11 @@
                         Discover Your Next Favorite Event
                     {% elif page == 'about' %}
                         Curated With Love By
-                    {% else %}
+                    {% elif page == 'landing-page' %}
                         Discover Your Next Favorite Book
                     {% endif %}
                 </h2>
-                {% if page != 'about' %}
+                {% if page == 'events' or page == 'landing-page' %}
                     <p>Browse thousands of books, curated collections, and personalized recommendations.</p>
                 {% endif %}
                 {% if page == 'landing-page' %}
