@@ -4,4 +4,15 @@
     <link rel="stylesheet" href="{% static 'styles/profile.css' %}">
 {% endblock %}
 {% block content %}
+    <div class="username">{{ username }}</div>
+    <div class="reviews">
+        {% for review in reviews %}
+            <a class="review" href="{{ review.book_link }}">
+                <div class="info">
+                    <div class="rating">{{ review.rating }}</div>
+                </div>
+                <div class="message">{{ review.message }}</div>
+            </a>
+        {% endfor %}
+    </div>
 {% endblock %}

@@ -121,10 +121,14 @@ body {
     background-color: #fff;
     margin:  10% auto;
     border: 1px solid #888;
-    width: 300px;
+    width: 500px;
     color: black;
     border-radius: 1rem;
     text-align: center;
+    aspect-ratio: 5/4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 #loginForm > h2 {
     margin: 0;
@@ -132,10 +136,7 @@ body {
     text-align: center;
     color: white;
     padding-top: 2rem;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-    border-bottom-left-radius: 5rem;
-    border-bottom-right-radius: 5rem;
+    border-radius: 1rem 1rem 5rem 5rem;
     font-size: 2rem;
     text-transform: uppercase;
     background-color: #513C89;

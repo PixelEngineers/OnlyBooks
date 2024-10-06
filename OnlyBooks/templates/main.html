@@ -32,10 +32,10 @@
     <div class="content">
         <header>
             <nav class="navbar">
-                <h1>Only Books</h1>
+                <a href="{% url 'landing-page' %}"><h1>OnlyBooks</h1></a>
                 <ul>
+                    <li><a href="{% url 'books' %}">Browse</a></li>
                     <li><a href="{% url 'events' %}">Events</a></li>
-                    <li><a href="{% url 'landing-page' %}">Categories</a></li>
                     <li><a href="{% url 'landing-page' %}#recommendations">Recommendations</a></li>
                     <li><a href="{% url 'about' %}">About Us</a></li>
                 </ul>
