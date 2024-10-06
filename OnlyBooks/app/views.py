@@ -43,7 +43,7 @@ def books(request):
     })
 
 def map_review(review):
-    review["rating"] = '⭐' * review["rating"]
+    review["rating"] = [0] * review["rating"] # used to iterate in jinja
     user_id = review.get("user_id")
     if user_id is not None:
         review["user_link"] = f'/profile/{user_id}'
@@ -65,8 +65,16 @@ def book(request, book_id):
         "username": "Jessi Doe",
         "user_id": 2,
     }]
+    book_data = {
+        "cover_link": "https://fastly.picsum.photos/id/83/300/500.jpg?hmac=xBw_i32ezzCcXFdm7P9L6RLda43HLOfcC-2K-xyl4Sk",
+        "title": "Dumb ways to die",
+        "author": "John Doe",
+        "pages": 420,
+        "tags": ["romance"]
+    }
     return render(request, 'app/book.html', {
         "page": page,
+        "book": book_data,
         "reviews": list(map(
             lambda review: map_review(review),
             reviews
@@ -86,10 +94,20 @@ def profile(request, user_id):
         "book_name": "Adult Shark",
         "book_id": 1
     }]
-    username = "John Doe"
+    user_data = {
+        "name": "John Doe",
+        "favourite_tags": ["sci-fi", "romance"],
+        "wishlisted_books": [{
+            "link": 'book/0',
+            "name": "Baby Shark"
+        }, {
+            "link": 'book/2',
+            "name": "Mary had a little lamb"
+        }]
+    }
     return render(request, 'app/profile.html', {
         "page": page,
-        "username": username,
+        "user_data": user_data,
         "reviews": list(map(
             lambda review: map_review(review),
             reviews

@@ -7,5 +7,5 @@ urlpatterns=[
     path('events/', views.events, name='events'),
     path('books/', views.books, name='books'),
     path('book/<str:book_id>/', views.book, name='book'),
-    path('profile/<str:user_id>', views.profile, name='profile'),
+    path('profile/<str:user_id>/', views.profile, name='profile'),
 ]
