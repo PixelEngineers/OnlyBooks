@@ -23,6 +23,8 @@ main > div:hover {
 }
 main > div >  div {
     font-size: 2rem;
+
+
 }
 i::before {
     width: 24px !important;
