@@ -26,6 +26,10 @@ main > div >  div {
 
 
 }
+.pfp {
+    margin: auto;
+    border-radius: 64rem;
+}
 .big {
     text-align: center;
     font-size: 3rem;
