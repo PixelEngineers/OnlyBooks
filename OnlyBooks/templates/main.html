@@ -6,11 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookstore Web App</title>
     <link rel="stylesheet" href="{% static 'styles/main.css' %}">
-    <link
-        rel="stylesheet"
-        href="{% static 'iconoir.css' %}"
-    />
-
+    <link rel="stylesheet" href="{% static 'iconoir.css' %}">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     {% block head %}
     {% endblock %}
@@ -19,7 +15,7 @@
     <!-- Modal for Login/Signup -->
     <div id="loginModal" class="modal">
         <div class="modal-content">
-             <div class="cross-padder">
+            <div class="cross-padder">
                 <div></div>
                 <span class="iconoir-xmark" onclick="toggleModal()"></span>
             </div>
@@ -35,23 +31,33 @@
     <div id="particles-js"></div>
     <div class="content">
         <header>
-        <nav class="navbar">
-            <h1>Only Books</h1>
-            <ul>
-                <li><a href="{% url 'landing-page' %}">Categories</a></li>
-                <li><a href="{% url 'landing-page' %}#recommendations">Recommendations</a></li>
-                <li><a href="{% url 'about' %}">About Us</a></li>
-            </ul>
-            <button class="login-btn" onclick="toggleModal()">Login / Sign Up</button>
-        </nav>
-        <div class="hero">
-            <h2>Discover Your Next Favorite {% if page == 'events' %} Event {% else %} Book {% endif %}</h2>
-            <p>Browse {% if page == 'events' %} hundreds of events {% else %} thousands of books {% endif %}, curated collections, and personalized recommendations.</p>
-            {% if page == 'landing-page' %}
-                <input aria-label="Search Term" type="text" placeholder="Search for books, authors, genres...">
-                <button onclick="searchBooks()">Shop Now</button>
-            {% endif %}
-        </div>
+            <nav class="navbar">
+                <h1>Only Books</h1>
+                <ul>
+                    <li><a href="{% url 'landing-page' %}">Categories</a></li>
+                    <li><a href="{% url 'landing-page' %}#recommendations">Recommendations</a></li>
+                    <li><a href="{% url 'about' %}">About Us</a></li>
+                </ul>
+                <button class="login-btn" onclick="toggleModal()">Login / Sign Up</button>
+            </nav>
+            <div class="hero">
+                <h2>
+                    {% if page == 'events' %}
+                        Discover Your Next Favorite Event
+                    {% elif page == 'about' %}
+                        Curated With Love By
+                    {% else %}
+                        Discover Your Next Favorite Book
+                    {% endif %}
+                </h2>
+                {% if page != 'about' %}
+                    <p>Browse thousands of books, curated collections, and personalized recommendations.</p>
+                {% endif %}
+                {% if page == 'landing-page' %}
+                    <input aria-label="Search Term" type="text" placeholder="Search for books, authors, genres...">
+                    <button onclick="searchBooks()">Shop Now</button>
+                {% endif %}
+            </div>
         </header>
         {% block content %}
         {% endblock %}
